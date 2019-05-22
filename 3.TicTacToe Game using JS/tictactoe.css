@@ -1,0 +1,42 @@
+.container{
+	width: 300px;
+	margin-left:520px;
+
+}
+
+.box{
+	width: 96px;
+	height: 96px;
+	border: 0.5px solid black;
+	float:left;
+	font-size: 85px;
+	text-align: center;
+}
+
+h1,h2{
+	text-align: center;
+}
+
+.bottom{
+	border-bottom: none;
+}
+
+.top{
+	border-top: none;
+}
+
+.side{
+	border-right: none;
+}
+
+.oside{
+	border-left: none;
+}
+
+button{
+	background: teal;
+	font-size: 25px;
+	color: white;
+	font-weight: bold;
+	margin: 50px 50px 100px 100px; 
+}
