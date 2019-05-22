@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="jumbotron">
+        <p><em>Handpicked Blogs from all around the world...</em></p>
+        <a href="/blogs/new" class="btn btn-large btn-success ">Add a New Blog</a> 
+    </div>    
+</div>
+ <% blogs.forEach(function(blog){ %>
+    <div class="postbody">
+        <div class="post">
+            <p class="date"> <%= blog.created.toDateString() %> </p>
+        
+            <h2><%= blog.title %></h2>
+            <h3>Created By: <%= blog.author.username %></h3>   
+        
+            <p class="quote"><%= blog.description.substring(0,100) %>....</p>
+            <hr>
+            <a href="/blogs/<%= blog._id %>"  class="btn btn-large btn-primary">More Info</a>
+          
+        </div>
+    </div>
+    
+ <% }); %>
+ <a href="/" class="btn btn-large btn-info">Go Back</a>
+
+<% include ../partials/footer %>

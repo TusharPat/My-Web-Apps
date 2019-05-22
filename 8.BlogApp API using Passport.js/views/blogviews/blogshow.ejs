@@ -1,0 +1,46 @@
+<% include ../partials/header %>
+<div class="postbody">
+    <div class="post">
+        <p class="date"> <%= foundblog.created.toDateString() %> </p>
+    
+        <h2><%= foundblog.title %></h2>
+        <h3>Created By: <%= foundblog.author.username %></h3>   
+    
+        <p class="quote"><%= foundblog.description %></p>
+        <% if(currentUser && foundblog.author.id.equals(currentUser._id)){ %>
+            <a href="/blogs/<%= foundblog._id %>/edit"  class="btn btn-large btn-primary">Edit</a>
+            <form action="/blogs/<%= foundblog._id %>?_method=DELETE" method="POST" style="display:inline-block">
+                <button class="btn btn-large btn-danger">Delete</button>
+            </form>
+        <% } %>
+        <hr style="border: 0.2px solid grey">
+        <div class="well">
+            <div class="text-right">
+                <a class="btn btn-success" href="/blogs/<%= foundblog._id %>/comments/new">Add New Comment</a>
+            </div>
+            <hr>
+            <% foundblog.comments.forEach(function(comment){ %>
+                <div class="row" style="margin-bottom:15px;">
+                    <div class="col-md-12">
+                        <strong><%= comment.author.username %></strong>
+                        <span class="pull-right"><%=comment.created.toDateString() %></span>
+                        <p>
+                            <%= comment.text %> 
+                        </p>
+                        <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                            <a href="/blogs/<%=foundblog._id %>/comments/<%=comment._id %>/edit" class="btn btn-xs btn-primary">Edit</a>
+                            <form action="/blogs/<%=foundblog._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST" style="display:inline-block">
+                                <button class="btn btn-xs btn-danger">Delete</button>
+                            </form>
+                        <% } %>    
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+    </div>
+    <a href="/blogs">Go Back</a>
+</div>
+<% include ../partials/footer %>
+
+
