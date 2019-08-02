@@ -1,0 +1,25 @@
+li {
+	background: #fff;
+	height: 50px;
+	line-height: 40px;
+    color: #666;
+    font-size: 20px;
+    
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 10;
+}
+
+button{
+    background-color: #cc3333;
+	height: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;
+	color: white;
+	width: 30px;
+	display: inline-block;
+}

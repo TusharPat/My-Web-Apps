@@ -1,0 +1,10 @@
+body {
+	font-family: Roboto;
+	background: -webkit-linear-gradient(to left, #141E30 , #243B55); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, rgb(79, 135, 238) , rgb(206, 220, 235));
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
